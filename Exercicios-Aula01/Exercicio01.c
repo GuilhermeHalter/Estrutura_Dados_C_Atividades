@@ -12,21 +12,35 @@ typedef struct pessoa {
     float altura;
 } Pessoa;
 
+Pessoa entrada(void);
+void imprimir(Pessoa valor);
+
 int main(void) {
-    Pessoa a1;
-
-    printf("Digite o nome da pessoa: ");
-    scanf("%s", a1.nome);
-
-    printf("Digite a idade da pessoa: ");
-    scanf("%d", &a1.idade);
-
-    printf("Digite a altura da pessoa: ");
-    scanf("%f", &a1.altura);
-
-    printf("Nome: %s\n", a1.nome);
-    printf("Idade: %d\n", a1.idade);
-    printf("Altura: %.2f\n", a1.altura);
-
+    Pessoa valor;
+    
+    valor = entrada();
+    
+    imprimir(valor);
     return 0;
 }
+
+Pessoa entrada (void){
+    Pessoa valor;
+    
+    printf("Digite o nome da pessoa: ");
+    scanf("%s", valor.nome);
+
+    printf("Digite a idade da pessoa: ");
+    scanf("%d", &valor.idade);
+
+    printf("Digite a altura da pessoa: ");
+    scanf("%f", &valor.altura);
+    
+    return valor;
+}
+
+void imprimir(Pessoa valor){
+    printf("nome: %s \tidade: %d \taltura: %f", valor.nome, valor.idade, valor.altura);
+}
+
+
